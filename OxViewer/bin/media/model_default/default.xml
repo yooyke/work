@@ -1,0 +1,28 @@
+<node type='animatedMesh'>
+	<attributes name='Name' value='default'>
+	<animation><string name='Name' value='customize01' /><int name='Start' value='645' /><int name='End' value='676' /><int name='Speed' value='30' /></animation>
+	<animation><string name='Name' value='customize02' /><int name='Start' value='677' /><int name='End' value='802' /><int name='Speed' value='30' /></animation>
+	<animation><string name='Name' value='customize03' /><int name='Start' value='333' /><int name='End' value='443' /><int name='Speed' value='30' /></animation>
+	<animation><string name='Name' value='customize04' /><int name='Start' value='803' /><int name='End' value='832' /><int name='Speed' value='30' /></animation>
+	<animation><string name='Name' value='customize05' /><int name='Start' value='444' /><int name='End' value='634' /><int name='Speed' value='30' /></animation>
+	<animation><string name='Name' value='customize06' /><int name='Start' value='834' /><int name='End' value='894' /><int name='Speed' value='30' /></animation>
+	<animation><string name='Name' value='customize11' /><int name='Start' value='1369' /><int name='End' value='1409' /><int name='Speed' value='30' /></animation>
+	<animation><string name='Name' value='customize12' /><int name='Start' value='1410' /><int name='End' value='1535' /><int name='Speed' value='30' /></animation>
+	<animation><string name='Name' value='customize13' /><int name='Start' value='1077' /><int name='End' value='1177' /><int name='Speed' value='30' /></animation>
+	<animation><string name='Name' value='customize14' /><int name='Start' value='1536' /><int name='End' value='1566' /><int name='Speed' value='30' /></animation>
+	<animation><string name='Name' value='customize15' /><int name='Start' value='1178' /><int name='End' value='1368' /><int name='Speed' value='30' /></animation>
+	<animation><string name='Name' value='customize16' /><int name='Start' value='1567' /><int name='End' value='1627' /><int name='Speed' value='30' /></animation>
+	<animation><string name='Name' value='standing' /><int name='Start' value='0' /><int name='End' value='60' /><int name='Speed' value='30' /></animation>
+	<animation><string name='Name' value='walking' /><int name='Start' value='187' /><int name='End' value='217' /><int name='Speed' value='30' /></animation>
+	<animation><string name='Name' value='running' /><int name='Start' value='218' /><int name='End' value='238' /><int name='Speed' value='30' /></animation>
+	<animation><string name='Name' value='sitting' /><int name='Start' value='92' /><int name='End' value='152' /><int name='Speed' value='30' /></animation>
+	<animation><string name='Name' value='standup' /><int name='Start' value='153' /><int name='End' value='183' /><int name='Speed' value='30' /></animation>
+	<animation><string name='Name' value='sitstart' /><int name='Start' value='61' /><int name='End' value='91' /><int name='Speed' value='30' /></animation>
+
+	<animation><string name='Name' value='standing_speak' /><int name='Start' value='257' /><int name='End' value='307' /><int name='Speed' value='30' /></animation>
+	<animation><string name='Name' value='standing_speak_end' /><int name='Start' value='307' /><int name='End' value='332' /><int name='Speed' value='30' /></animation>
+	<animation><string name='Name' value='sitting_speak' /><int name='Start' value='1001' /><int name='End' value='1051' /><int name='Speed' value='30' /></animation>
+	<animation><string name='Name' value='sitting_speak_end' /><int name='Start' value='1051' /><int name='End' value='1076' /><int name='Speed' value='30' /></animation>
+
+</attributes></node>
+

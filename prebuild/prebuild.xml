@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Prebuild xmlns="http://dnpb.sourceforge.net/schemas/prebuild-1.7.xsd" version="1.7">
+  <Solution name="SampleSolution" activeConfig="Debug" path="./" version="0.4.0-svn">
+    <Configuration name="Debug">
+      <Options>
+        <CompilerDefines>TRACE;DEBUG</CompilerDefines>
+        <OptimizeCode>false</OptimizeCode>
+        <CheckUnderflowOverflow>false</CheckUnderflowOverflow>
+        <AllowUnsafe>false</AllowUnsafe>
+        <WarningLevel>4</WarningLevel>
+        <WarningsAsErrors>false</WarningsAsErrors>
+        <SuppressWarnings></SuppressWarnings>
+        <OutputPath>bin</OutputPath>
+        <DebugInformation>true</DebugInformation>
+        <IncrementalBuild>true</IncrementalBuild>
+        <NoStdLib>false</NoStdLib>
+      </Options>
+    </Configuration>
+    <Configuration name="Release">
+      <Options>
+        <CompilerDefines>TRACE</CompilerDefines>
+        <OptimizeCode>true</OptimizeCode>
+        <CheckUnderflowOverflow>false</CheckUnderflowOverflow>
+        <AllowUnsafe>false</AllowUnsafe>
+        <WarningLevel>4</WarningLevel>
+        <WarningsAsErrors>false</WarningsAsErrors>
+        <SuppressWarnings></SuppressWarnings>
+        <OutputPath>bin</OutputPath>
+        <DebugInformation>false</DebugInformation>
+        <IncrementalBuild>true</IncrementalBuild>
+        <NoStdLib>false</NoStdLib>
+      </Options>
+    </Configuration>
+
+    <Project name="Sample" path="Sample" type="Exe"><!-- Exe, WinExe, Library -->
+      <Configuration name="Debug">
+        <Options>
+          <OutputPath>../bin</OutputPath>
+          <AllowUnsafe>true</AllowUnsafe>
+        </Options>
+      </Configuration>
+      <Configuration name="Release">
+        <Options>
+          <OutputPath>../bin</OutputPath>
+          <AllowUnsafe>true</AllowUnsafe>
+        </Options>
+      </Configuration>
+
+      <ReferencePath>../bin</ReferencePath>
+      <Reference name="System" localCopy="false"/>
+      <Reference name="System.Drawing" localCopy="false"/>
+      <Reference name="System.Xml" localCopy="false"/>
+      <Files>
+         <Match pattern="*.cs" recurse="true"/>
+      </Files>
+    </Project>
+
+  </Solution>
+</Prebuild>
+

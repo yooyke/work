@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<title>OxViewer Plane Samples</title>
+<script type="text/javascript" src="opvwjs/thirdparty/json2.js" language="javascript"></script>
+<script type="text/javascript" language="javascript">
+<!--
+	function Login( firstName, lastName, password, serverUri, loginLocation ){
+		var val;
+		var msg;
+		
+		val = JSON.stringify({"first":firstName, "last":lastName, "password":password, "uri":serverUri, "location":loginLocation});
+		msg = JSON.stringify({"key":"login", "value":val});
+		ctrl0.Function(msg);
+	}
+	function Logout(){
+		var msg;
+		
+		msg = JSON.stringify({"key":"logout", "value":""});
+		ctrl0.Function(msg);
+	}
+-->
+</script>
+<script type="text/jscript" language="javascript" for="ctrl0" event="OnEvent(message)">
+<!--
+    var data = JSON.parse(message);
+    if (data.key == 'state')
+    {
+	    data = JSON.parse(data.value);
+    	switch (data.state)
+    	{
+    		case 1: // Initialize
+				val = JSON.stringify({"economy":0, "login_wait_second":1}); // If economy is 1, Viewer's target frame is 5 when it's disactive.
+				msg = JSON.stringify({"key":"setting", "value":val});
+				ctrl0.Function(msg);
+				
+				val = JSON.stringify({"paths":[
+					"http://www.geocities.jp/yattyatta2004/yukidarumaikkakurisumasu20001.jpg",
+					"http://www2u.biglobe.ne.jp/~endo-c/gallery/gifts/xmas2007.jpg",
+					"http://oekakiart.net/xmas/xmas2008/xdada/xmas_art2008_112.png",
+					"http://blog.digital-lemon.com/images/No230merrychristmas_blue_sample.jpg",
+					"http://us.123rf.com/400wm/135/0/olgaaltunina/olgaaltunina0812/olgaaltunina081200027/4024643.jpg",
+					"http://us.123rf.com/400wm/400/400/chagall/chagall0810/chagall081000025/3762562.jpg"
+				], "change_second":5});
+				msg = JSON.stringify({"key":"title", "value":val});
+				ctrl0.Function(msg);
+				break;
+			case 2: // Login
+				break;
+    	}
+    }
+-->
+</script>
+</head>
+
+<body>
+	<object id="ctrl0" type="application/x-oleobject" classid="clsid:6D0B8646-DA71-4a4b-AD47-FD6F2A145937" width="800" height="600">
+		<param name="WindowWidth" value="800">
+		<param name="WindowHeight" value="600">
+		<param name="ViewerMode" value="0">
+	</object>
+	<br>
+	<input type="text" id="login_first0" value="kk">
+	<input type="text" id="login_last0" value="kk">
+	<input type="text" id="login_pass0" value="">
+	<input type="button" value="Login" onclick="Login(login_first0.value, login_last0.value, login_pass0.value, 'http://210.188.235.171:10001', 'last');" />
+	<input type="button" value="Logout" onclick="Logout();" />
+</body>
+</html>

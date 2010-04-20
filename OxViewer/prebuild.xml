@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Prebuild xmlns="http://dnpb.sourceforge.net/schemas/prebuild-1.7.xsd" version="1.7">
+  <Solution name="OxViewer" activeConfig="Debug" path="./" version="0.4.0-svn">
+    <Configuration name="Debug">
+      <Options>
+        <CompilerDefines>TRACE;DEBUG</CompilerDefines>
+        <OptimizeCode>false</OptimizeCode>
+        <CheckUnderflowOverflow>false</CheckUnderflowOverflow>
+        <AllowUnsafe>false</AllowUnsafe>
+        <WarningLevel>4</WarningLevel>
+        <WarningsAsErrors>false</WarningsAsErrors>
+        <SuppressWarnings></SuppressWarnings>
+        <OutputPath>bin</OutputPath>
+        <DebugInformation>true</DebugInformation>
+        <IncrementalBuild>true</IncrementalBuild>
+        <NoStdLib>false</NoStdLib>
+      </Options>
+    </Configuration>
+    <Configuration name="Release">
+      <Options>
+        <CompilerDefines>TRACE</CompilerDefines>
+        <OptimizeCode>true</OptimizeCode>
+        <CheckUnderflowOverflow>false</CheckUnderflowOverflow>
+        <AllowUnsafe>false</AllowUnsafe>
+        <WarningLevel>4</WarningLevel>
+        <WarningsAsErrors>false</WarningsAsErrors>
+        <SuppressWarnings></SuppressWarnings>
+        <OutputPath>bin</OutputPath>
+        <DebugInformation>false</DebugInformation>
+        <IncrementalBuild>true</IncrementalBuild>
+        <NoStdLib>false</NoStdLib>
+      </Options>
+    </Configuration>
+
+<!-- OxLoader -->
+
+    <Project name="OxLoader" path="OxLoader" type="Library">
+      <Configuration name="Debug">
+        <Options>
+          <OutputPath>../bin</OutputPath>
+        </Options>
+      </Configuration>
+      <Configuration name="Release">
+        <Options>
+          <OutputPath>../bin</OutputPath>
+        </Options>
+      </Configuration>
+
+      <ReferencePath>../bin</ReferencePath>
+      <Reference name="System" localCopy="false"/>
+      <Files>
+         <Match pattern="*.cs" recurse="true"/>
+      </Files>
+    </Project>
+    
+
+<!-- OxUpdate -->
+
+    <Project name="OxUpdate" path="OxUpdate" type="Library">
+      <Configuration name="Debug">
+        <Options>
+          <OutputPath>../bin</OutputPath>
+        </Options>
+      </Configuration>
+      <Configuration name="Release">
+        <Options>
+          <OutputPath>../bin</OutputPath>
+        </Options>
+      </Configuration>
+
+      <ReferencePath>../bin</ReferencePath>
+      <Reference name="System" localCopy="false"/>
+      <Reference name="OxLoader"/>
+      <Files>
+         <Match pattern="*.cs" recurse="true"/>
+      </Files>
+    </Project>
+
+<!-- OxCore -->
+
+    <Project name="OxCore" path="OxCore" type="Library">
+      <Configuration name="Debug">
+        <Options>
+          <OutputPath>../bin</OutputPath>
+        </Options>
+      </Configuration>
+      <Configuration name="Release">
+        <Options>
+          <OutputPath>../bin</OutputPath>
+        </Options>
+      </Configuration>
+
+      <ReferencePath>../bin</ReferencePath>
+      <Reference name="System" localCopy="false"/>
+      <Reference name="System.Drawing" localCopy="false"/>
+      <Reference name="System.Windows.Forms" localCopy="false"/>
+      <Reference name="System.Xml" localCopy="false"/>
+      <Reference name="OxLoader"/>
+      <Reference name="SmartThreadPool"/>
+      <Files>
+         <Match pattern="*.cs" recurse="true"/>
+         <Match pattern="*.resx" buildAction="EmbeddedResource" recurse="true"/>
+         <Match path="Resources" pattern="*.xml" buildAction="EmbeddedResource"/>
+      </Files>
+    </Project>
+
+<!-- OxLocalize -->
+
+    <Project name="OxLocalize" path="OxLocalize" type="Library">
+      <Configuration name="Debug">
+        <Options>
+          <OutputPath>../bin</OutputPath>
+        </Options>
+      </Configuration>
+      <Configuration name="Release">
+        <Options>
+          <OutputPath>../bin</OutputPath>
+        </Options>
+      </Configuration>
+
+      <ReferencePath>../bin</ReferencePath>
+      <Reference name="System" localCopy="false"/>
+      <Files>
+         <Match pattern="*.cs" recurse="true"/>
+         <Match pattern="*.resx" buildAction="EmbeddedResource" recurse="true"/>
+      </Files>
+    </Project>
+
+<!-- OxUtil -->
+
+    <Project name="OxUtil" path="OxUtil" type="Library">
+      <Configuration name="Debug">
+        <Options>
+          <OutputPath>../bin</OutputPath>
+        </Options>
+      </Configuration>
+      <Configuration name="Release">
+        <Options>
+          <OutputPath>../bin</OutputPath>
+        </Options>
+      </Configuration>
+
+      <ReferencePath>../bin</ReferencePath>
+      <Reference name="System" localCopy="false"/>
+      <Reference name="System.Drawing" localCopy="false"/>
+      <Reference name="System.Xml" localCopy="false"/>
+      <Files>
+         <Match pattern="*.cs" recurse="true"/>
+      </Files>
+    </Project>
+    
+<!-- OxJson -->
+
+    <Project name="OxJson" path="OxJson" type="Library">
+      <Configuration name="Debug">
+        <Options>
+          <OutputPath>../bin</OutputPath>
+        </Options>
+      </Configuration>
+      <Configuration name="Release">
+        <Options>
+          <OutputPath>../bin</OutputPath>
+        </Options>
+      </Configuration>
+
+      <ReferencePath>../bin</ReferencePath>
+      <Reference name="System" localCopy="false"/>
+      <Reference name="Newtonsoft.Json.Compact"/>
+      <Files>
+         <Match pattern="*.cs" recurse="true"/>
+      </Files>
+    </Project>
+    
+<!-- OxAX -->
+
+    <Project name="OxAX" path="OxAX" type="Library">
+      <Configuration name="Debug">
+        <Options>
+          <OutputPath>../bin</OutputPath>
+          <RegisterComInterop>true</RegisterComInterop>
+        </Options>
+      </Configuration>
+      <Configuration name="Release">
+        <Options>
+          <OutputPath>../bin</OutputPath>
+          <RegisterComInterop>true</RegisterComInterop>
+        </Options>
+      </Configuration>
+
+      <ReferencePath>../bin</ReferencePath>
+      <Reference name="System" localCopy="false"/>
+      <Reference name="System.Drawing" localCopy="false"/> 
+      <Reference name="System.Windows.Forms" localCopy="false"/>
+      <Reference name="OxLoader"/>
+      <Files>
+         <Match pattern="*.cs" recurse="true"/>
+         <Match pattern="*.resx" buildAction="EmbeddedResource" recurse="true"/>
+         <Match path="Resources" pattern="*.xml" buildAction="EmbeddedResource"/>
+      </Files>
+    </Project>
+
+<!-- OxHost -->
+
+    <Project name="OxHost" path="OxHost" type="Exe">
+      <Configuration name="Debug">
+        <Options>
+          <OutputPath>../bin</OutputPath>
+        </Options>
+      </Configuration>
+      <Configuration name="Release">
+        <Options>
+          <OutputPath>../bin</OutputPath>
+        </Options>
+      </Configuration>
+
+      <ReferencePath>../bin</ReferencePath>
+      <Reference name="System" localCopy="false"/>
+      <Reference name="System.Drawing" localCopy="false"/> 
+      <Reference name="System.Windows.Forms" localCopy="false"/>
+      <Reference name="System.Xml" localCopy="false"/>
+      <Reference name="OxLoader"/>
+      <Reference name="OxCore"/>
+      <Reference name="OxJson"/>
+      <Files>
+         <Match pattern="*.cs" recurse="true"/>
+         <Match pattern="*.resx" buildAction="EmbeddedResource" recurse="true"/>
+         <Match path="Resources" pattern="*.xml" buildAction="EmbeddedResource"/>
+      </Files>
+    </Project>
+    
+<!-- OxViewer -->
+
+    <Project name="OxViewer" path="OxViewer" type="Library">
+      <Configuration name="Debug">
+        <Options>
+          <OutputPath>../bin</OutputPath>
+        </Options>
+      </Configuration>
+      <Configuration name="Release">
+        <Options>
+          <OutputPath>../bin</OutputPath>
+        </Options>
+      </Configuration>
+
+      <ReferencePath>../bin</ReferencePath>
+      <Reference name="System" localCopy="false"/>
+      <Reference name="System.Drawing" localCopy="false"/>
+      <Reference name="System.Web" localCopy="false"/>
+      <Reference name="System.Windows.Forms" localCopy="false"/>
+      <Reference name="System.Xml" localCopy="false"/>
+      <Reference name="OpenMetaverse"/>
+      <Reference name="OpenMetaverseTypes"/>
+      <Reference name="PrimMesher"/>
+      <Reference name="OxLoader"/>
+      <Reference name="OxCore"/>
+      <Reference name="OxUtil"/>
+      <Reference name="OxJson"/>
+      <Reference name="OxRender"/>
+      <Files>
+         <Match pattern="*.cs" recurse="true"/>
+      </Files>
+    </Project>
+    
+<!-- OxRender -->
+
+    <Project name="OxRender" path="OxRender" type="Library">
+      <Configuration name="Debug">
+        <Options>
+          <OutputPath>../bin</OutputPath>
+        </Options>
+      </Configuration>
+      <Configuration name="Release">
+        <Options>
+          <OutputPath>../bin</OutputPath>
+        </Options>
+      </Configuration>
+
+      <ReferencePath>../bin</ReferencePath>
+      <Reference name="System" localCopy="false"/>
+      <Reference name="System.Drawing" localCopy="false"/>
+      <Reference name="System.Windows.Forms" localCopy="false"/>
+      <Reference name="Irrlicht.NET"/>
+      <Reference name="OxLoader"/>
+      <Reference name="OxCore"/>
+      <Reference name="OxUtil"/>
+      <Reference name="OxJson"/>
+      <Files>
+         <Match pattern="*.cs" recurse="true"/>
+      </Files>
+    </Project>
+    
+<!-- OxViewer.Plugin.Default -->
+
+    <Project name="OxViewer.Plugin.Default" path="OxViewer.Plugin.Default" type="Library">
+      <Configuration name="Debug">
+        <Options>
+          <OutputPath>../bin</OutputPath>
+        </Options>
+      </Configuration>
+      <Configuration name="Release">
+        <Options>
+          <OutputPath>../bin</OutputPath>
+        </Options>
+      </Configuration>
+
+      <ReferencePath>../bin</ReferencePath>
+      <Reference name="System" localCopy="false"/>
+      <Reference name="System.Drawing" localCopy="false"/>
+      <Reference name="System.Windows.Forms" localCopy="false"/>
+      <Reference name="OxLoader"/>
+      <Reference name="OxCore" localCopy="false"/>
+      <Reference name="OxJson"/>
+      <Reference name="OxViewer" localCopy="false"/>
+      <Files>
+         <Match pattern="*.cs" recurse="true"/>
+      </Files>
+    </Project>
+
+<!-- OxViewer.Plugin.Default.ProgressBar -->
+
+    <Project name="OxViewer.Plugin.Default.ProgressBar" path="OxViewer.Plugin.Default.ProgressBar" type="Library">
+      <Configuration name="Debug">
+        <Options>
+          <OutputPath>../bin</OutputPath>
+        </Options>
+      </Configuration>
+      <Configuration name="Release">
+        <Options>
+          <OutputPath>../bin</OutputPath>
+        </Options>
+      </Configuration>
+
+      <ReferencePath>../bin</ReferencePath>
+      <Reference name="System" localCopy="false"/>
+      <Reference name="System.Drawing" localCopy="false"/>
+      <Reference name="System.Windows.Forms" localCopy="false"/>
+      <Reference name="OxLoader"/>
+      <Reference name="OxCore" localCopy="false"/>
+      <Reference name="OxJson"/>
+      <Reference name="OxViewer" localCopy="false"/>
+      <Files>
+         <Match pattern="*.cs" recurse="true"/>
+      </Files>
+    </Project>
+
+<!-- OxRender.Plugin.Default -->
+
+    <Project name="OxRender.Plugin.Default" path="OxRender.Plugin.Default" type="Library">
+      <Configuration name="Debug">
+        <Options>
+          <OutputPath>../bin</OutputPath>
+        </Options>
+      </Configuration>
+      <Configuration name="Release">
+        <Options>
+          <OutputPath>../bin</OutputPath>
+        </Options>
+      </Configuration>
+
+      <ReferencePath>../bin</ReferencePath>
+      <Reference name="System" localCopy="false"/>
+      <Reference name="System.Xml" localCopy="false"/>
+      <Reference name="Irrlicht.NET" localCopy="false"/>
+      <Reference name="OxLoader"/>
+      <Reference name="OxCore" localCopy="false"/>
+      <Reference name="OxUtil"/>
+      <Reference name="OxJson"/>
+      <Reference name="OxRender" localCopy="false"/>
+      <Files>
+         <Match pattern="*.cs" recurse="true"/>
+      </Files>
+    </Project>
+
+<!-- OxRender.Plugin.Default.Avatar -->
+
+    <Project name="OxRender.Plugin.Default.Avatar" path="OxRender.Plugin.Default.Avatar" type="Library">
+      <Configuration name="Debug">
+        <Options>
+          <OutputPath>../bin</OutputPath>
+        </Options>
+      </Configuration>
+      <Configuration name="Release">
+        <Options>
+          <OutputPath>../bin</OutputPath>
+        </Options>
+      </Configuration>
+
+      <ReferencePath>../bin</ReferencePath>
+      <Reference name="System" localCopy="false"/>
+      <Reference name="System.Xml" localCopy="false"/>
+      <Reference name="Irrlicht.NET" localCopy="false"/>
+      <Reference name="OxLoader"/>
+      <Reference name="OxCore" localCopy="false"/>
+      <Reference name="OxUtil"/>
+      <Reference name="OxJson"/>
+      <Reference name="OxRender" localCopy="false"/>
+      <Files>
+         <Match pattern="*.cs" recurse="true"/>
+      </Files>
+    </Project>
+
+<!-- OxRender.Plugin.Default.Prim -->
+
+    <Project name="OxRender.Plugin.Default.Prim" path="OxRender.Plugin.Default.Prim" type="Library">
+      <Configuration name="Debug">
+        <Options>
+          <OutputPath>../bin</OutputPath>
+        </Options>
+      </Configuration>
+      <Configuration name="Release">
+        <Options>
+          <OutputPath>../bin</OutputPath>
+        </Options>
+      </Configuration>
+
+      <ReferencePath>../bin</ReferencePath>
+      <Reference name="System" localCopy="false"/>
+      <Reference name="System.Xml" localCopy="false"/>
+      <Reference name="Irrlicht.NET" localCopy="false"/>
+      <Reference name="OxLoader"/>
+      <Reference name="OxCore" localCopy="false"/>
+      <Reference name="OxUtil"/>
+      <Reference name="OxJson"/>
+      <Reference name="OxRender" localCopy="false"/>
+      <Files>
+         <Match pattern="*.cs" recurse="true"/>
+      </Files>
+    </Project>
+
+<!-- OxRender.Plugin.Default.Terrain -->
+
+    <Project name="OxRender.Plugin.Default.Terrain" path="OxRender.Plugin.Default.Terrain" type="Library">
+      <Configuration name="Debug">
+        <Options>
+          <OutputPath>../bin</OutputPath>
+        </Options>
+      </Configuration>
+      <Configuration name="Release">
+        <Options>
+          <OutputPath>../bin</OutputPath>
+        </Options>
+      </Configuration>
+
+      <ReferencePath>../bin</ReferencePath>
+      <Reference name="System" localCopy="false"/>
+      <Reference name="System.Xml" localCopy="false"/>
+      <Reference name="Irrlicht.NET" localCopy="false"/>
+      <Reference name="OxLoader"/>
+      <Reference name="OxCore" localCopy="false"/>
+      <Reference name="OxUtil"/>
+      <Reference name="OxJson"/>
+      <Reference name="OxRender" localCopy="false"/>
+      <Files>
+         <Match pattern="*.cs" recurse="true"/>
+      </Files>
+    </Project>
+
+<!-- OxRender.Plugin.Default.TilePicker -->
+
+    <Project name="OxRender.Plugin.Default.TilePicker" path="OxRender.Plugin.Default.TilePicker" type="Library">
+      <Configuration name="Debug">
+        <Options>
+          <OutputPath>../bin</OutputPath>
+        </Options>
+      </Configuration>
+      <Configuration name="Release">
+        <Options>
+          <OutputPath>../bin</OutputPath>
+        </Options>
+      </Configuration>
+
+      <ReferencePath>../bin</ReferencePath>
+      <Reference name="System" localCopy="false"/>
+      <Reference name="System.Xml" localCopy="false"/>
+      <Reference name="Irrlicht.NET" localCopy="false"/>
+      <Reference name="OxLoader"/>
+      <Reference name="OxCore" localCopy="false"/>
+      <Reference name="OxUtil"/>
+      <Reference name="OxJson"/>
+      <Reference name="OxRender" localCopy="false"/>
+      <Files>
+         <Match pattern="*.cs" recurse="true"/>
+      </Files>
+    </Project>
+
+<!-- OxRender.Plugin.Debug -->
+
+    <Project name="OxRender.Plugin.Debug" path="OxRender.Plugin.Debug" type="Library">
+      <Configuration name="Debug">
+        <Options>
+          <OutputPath>../bin</OutputPath>
+        </Options>
+      </Configuration>
+      <Configuration name="Release">
+        <Options>
+          <OutputPath>../bin</OutputPath>
+        </Options>
+      </Configuration>
+
+      <ReferencePath>../bin</ReferencePath>
+      <Reference name="System" localCopy="false"/>
+      <Reference name="System.Windows.Forms" localCopy="false"/>
+      <Reference name="Irrlicht.NET" localCopy="false"/>
+      <Reference name="OxLoader"/>
+      <Reference name="OxCore" localCopy="false"/>
+      <Reference name="OxJson"/>
+      <Reference name="OxRender" localCopy="false"/>
+      <Files>
+         <Match pattern="*.cs" recurse="true"/>
+      </Files>
+    </Project>
+  </Solution>
+</Prebuild>
+
+
