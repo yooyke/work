@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>checkpage_mp2</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="language" content="en" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	
+	<script src="js/swfobject.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		var flashvars = {
+		};
+		var params = {
+			menu: "false",
+			scale: "noScale",
+			allowFullscreen: "false",
+			allowScriptAccess: "always",
+			bgcolor: "#FFFFFF"
+		};
+		var attributes = {
+			id:"checkpage_mp2"
+		};
+		swfobject.embedSWF("checkpage_mp2.swf", "altContent", "780", "100", "9.0.0", "expressInstall.swf", flashvars, params, attributes);
+		
+		
+		
+		
+		
+		
+		var userID = "hogehoge_mogemoge";
+
+		function f2jClick(id)
+		{
+			switch (id)
+			{
+				case "faq01":
+					window.open("http://google.com","_blank");
+					break;
+
+				case "faq02":
+					window.open("http://yahoo.com","_blank");
+					break;
+
+				case "faq03":
+					window.open("http://3di.jp","_blank");
+					break;
+
+				case "faq04":
+					window.open("http://google.com","_blank");
+					break;
+
+				case "next":
+					window.open("http://google.com","_blank");
+					break;
+
+				case "back":
+					window.open("http://google.com","_blank");
+					break;
+
+				case "end":
+					window.open("http://google.com","_blank");
+					break;
+			}
+			alert(id);
+		}
+		
+		function viewerMessageParse(message)
+		{
+			if (message.indexOf("[AUTH]", 0) == 0)
+			{
+				message = message.substring("[AUTH]".length);
+				var params = message.split(",");
+				if (params.length > 1 && userID == params[0])
+				{
+					if (params[1] == "reset")
+						alert("Reset data");
+					else if (params[1] == "ok")
+						alert("Check authentication");
+					else
+						alert("Push " + parseInt(params[1]));
+				}
+			}
+
+			else if (message.indexOf("[PAGE]", 0) == 0)
+			{
+				message = message.substring("[PAGE]".length);
+				var params = message.split(",");
+				if (params.length > 1 && userID == params[0])
+				{
+					checkpage_mp2.j2fClick(params[1]);
+				}
+			}
+		}
+		
+		// これはViewerからのMessage
+		function viewerTest()
+		{
+			viewerMessageParse(viewer_message.value);
+		}
+
+		// Pageの設置
+		function pageSet()
+		{
+			var msg = "page_set:" + page_set_index.value + "," + page_set_url.value;
+			alert(msg);
+			checkpage_mp2.j2fClick(msg);
+		}
+		
+		
+		
+		
+		
+
+	</script>
+	<style>
+		html, body { height:100%; }
+		body { margin:0; background-color:#000000;}
+	</style>
+</head>
+<body>
+	<div id="altContent">
+		<h1>checkpage_mp2</h1>
+		<p>Alternative content</p>
+		<p><a href="http://www.adobe.com/go/getflashplayer"><img 
+			src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" 
+			alt="Get Adobe Flash player" /></a></p>
+	</div>
+	<br>
+	<input type="text" id="viewer_message" value="[AUTH]hogehoge_mogemoge,moge" style="width:554px;"></input>
+	<input type="button" value="viewerTest()" onclick="viewerTest();" style="width:128px;"></input>
+	<br>
+	<input type="text" id="page_set_index" value="2" style="width:32px;"></input>
+	<input type="text" id="page_set_url" value="assets/testpage.swf" style="width:512px;"></input>
+	<input type="button" value="pageSet()" onclick="pageSet();" style="width:128px;"></input>
+</body>
+</html>
